@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 import router from "./router";
 
 const app = express()
-const PORT = 3500;
+const PORT = 8080;
 const server = http.createServer(app);
 
 app.use(cors({
@@ -23,9 +23,7 @@ app.use(bodyParser.json());
 
 const DATABASE_URL="mongodb+srv://Shewd:VaS22xgmrzrA9zYd@vocabularyhelperdb.ea34ucy.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.Promise = Promise;
-mongoose.connect(DATABASE_URL);
-mongoose.connection.on('error', (error: Error) => console.log(error));
+
 
 app.use('/', router());
 
